@@ -1,0 +1,623 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Thoughts WordPress Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 13:01-0800\n"
+"PO-Revision-Date: 2014-02-06 13:01-0800\n"
+"Last-Translator: AJ Clarke <wpexplorer@gmail.com>\n"
+"Language-Team: WPExplorer.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:19
+msgid ""
+"Unfortunately, the page you tried accessing could not be retrieved. Please "
+"visit the"
+msgstr ""
+
+#: ../404.php:19
+msgid "homepage"
+msgstr ""
+
+#: ../archive.php:30
+msgid "Archives"
+msgstr ""
+
+#: ../author.php:25
+msgid "Posts by"
+msgstr ""
+
+#: ../comments.php:18
+msgid "Leave a comment"
+msgstr ""
+
+#: ../comments.php:18 ../content-audio.php:125 ../content-gallery.php:79
+#: ../content-image.php:70 ../content-link.php:67 ../content-video.php:66
+#: ../content.php:75
+msgid "1 Comment"
+msgstr ""
+
+#: ../comments.php:18 ../content-audio.php:125 ../content-gallery.php:79
+#: ../content-image.php:70 ../content-link.php:67 ../content-video.php:66
+#: ../content.php:75
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:18
+msgid "Comments closed"
+msgstr ""
+
+#: ../comments.php:22 ../comments.php:34
+msgid "Comment Navigation"
+msgstr ""
+
+#: ../comments.php:23 ../comments.php:35
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:24 ../comments.php:36
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:54
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:56
+msgid "Email"
+msgstr ""
+
+#: ../comments.php:58
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:66
+msgid "Log In To Comment"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Post Comment"
+msgstr ""
+
+#: ../content-audio.php:96 ../content-gallery.php:50 ../content-image.php:43
+#: ../content-link.php:40 ../content-video.php:39 ../content.php:47
+msgid "Categorized"
+msgstr ""
+
+#: ../content-audio.php:97 ../content-gallery.php:51 ../content-image.php:44
+#: ../content-link.php:41 ../content-video.php:40 ../content.php:48
+msgid "Tagged"
+msgstr ""
+
+#: ../content-audio.php:125 ../content-gallery.php:79 ../content-image.php:70
+#: ../content-link.php:67 ../content-video.php:66 ../content.php:75
+msgid "0 Comments"
+msgstr ""
+
+#: ../content-audio.php:125 ../content-gallery.php:79 ../content-image.php:70
+#: ../content-link.php:67 ../content-video.php:66 ../content.php:75
+msgid "read more"
+msgstr ""
+
+#: ../footer.php:25
+msgid "Copyright"
+msgstr ""
+
+#: ../functions.php:34
+msgid "Main Menu"
+msgstr ""
+
+#: ../options.php:57
+msgid "General"
+msgstr ""
+
+#: ../options.php:61
+msgid "Custom Logo"
+msgstr ""
+
+#: ../options.php:62
+msgid "Upload your custom logo."
+msgstr ""
+
+#: ../options.php:68
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../options.php:69
+msgid "Upload your custom site favicon."
+msgstr ""
+
+#: ../options.php:74
+msgid "Homepage Subtitle"
+msgstr ""
+
+#: ../options.php:75
+msgid "Check box to enable the responsive layout."
+msgstr ""
+
+#: ../options.php:77
+msgid "Welcome To Blog of AJ Clarke"
+msgstr ""
+
+#: ../options.php:83 ../functions/welcome.php:91
+msgid "About"
+msgstr ""
+
+#: ../options.php:87
+msgid "Theme Credit"
+msgstr ""
+
+#: ../options.php:92
+msgid "Support? Donations?"
+msgstr ""
+
+#: ../options.php:97
+msgid "Newsletter"
+msgstr ""
+
+#: ../search.php:16
+msgid "Search Results For"
+msgstr ""
+
+#: ../search.php:24
+msgid "Sorry, no results where found"
+msgstr ""
+
+#: ../searchform.php:12
+msgid "search..."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:164
+#: ../functions/recommend-plugins.php:71
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:165
+#: ../functions/recommend-plugins.php:72
+msgid "Install Plugins"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:166
+#: ../functions/recommend-plugins.php:73
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:178
+#: ../functions/class-tgm-plugin-activation.php:490
+#: ../functions/recommend-plugins.php:85
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:179
+#: ../functions/class-tgm-plugin-activation.php:1846
+#: ../functions/recommend-plugins.php:86
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:517
+#: ../functions/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1106
+#: ../functions/welcome.php:94
+msgid "Recommended"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1544
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1956
+#: ../functions/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1956
+#: ../functions/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../functions/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../functions/post_meta.php:16
+msgid "Post Settings"
+msgstr ""
+
+#: ../functions/post_meta.php:22
+msgid "Link Format URL"
+msgstr ""
+
+#: ../functions/post_meta.php:24
+msgid "Enter the url for your link format URL."
+msgstr ""
+
+#: ../functions/post_meta.php:29
+msgid "Audio MP3"
+msgstr ""
+
+#: ../functions/post_meta.php:31
+msgid "Enter the url for your mp3 audio file for your audio post format."
+msgstr ""
+
+#: ../functions/post_meta.php:36
+msgid "Audio OGG"
+msgstr ""
+
+#: ../functions/post_meta.php:38
+msgid ""
+"Enter the url for your ogg audio file for your audio post format. Required "
+"for Firefox."
+msgstr ""
+
+#: ../functions/post_meta.php:43
+msgid "Video Format Embed"
+msgstr ""
+
+#: ../functions/post_meta.php:45
+msgid ""
+"Enter in a video URL that is compatible with WordPress's built-in oEmbed "
+"feature."
+msgstr ""
+
+#: ../functions/post_meta.php:45
+msgid "Learn More"
+msgstr ""
+
+#: ../functions/recommend-plugins.php:74
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../functions/recommend-plugins.php:87
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: ../functions/scripts.php:49
+msgid "Menu"
+msgstr ""
+
+#: ../functions/scripts.php:50
+msgid "Prev"
+msgstr ""
+
+#: ../functions/scripts.php:51
+msgid "Next"
+msgstr ""
+
+#: ../functions/theme_customizer.php:31
+msgid "Theme Settings"
+msgstr ""
+
+#: ../functions/theme_customizer.php:40
+msgid "Image Logo"
+msgstr ""
+
+#: ../functions/theme_customizer.php:52
+msgid "Auto Excerpts?"
+msgstr ""
+
+#: ../functions/theme_customizer.php:65
+msgid "Custom Copyright"
+msgstr ""
+
+#: ../functions/welcome.php:51 ../functions/welcome.php:52
+msgid "Theme Details"
+msgstr ""
+
+#: ../functions/welcome.php:60
+msgid "Recommendations | Elegant Theme"
+msgstr ""
+
+#: ../functions/welcome.php:61 ../functions/welcome.php:181
+msgid "Recommendations"
+msgstr ""
+
+#: ../functions/welcome.php:118
+msgid "Theme"
+msgstr ""
+
+#: ../functions/welcome.php:120
+msgid "Thank you for choosing this WordPress theme for your website."
+msgstr ""
+
+#: ../functions/welcome.php:131
+msgid "GPL License"
+msgstr ""
+
+#: ../functions/welcome.php:132
+msgid ""
+"This theme is licensed under the GPL license. This means you can use it for "
+"anything you like as long as it remains GPL."
+msgstr ""
+
+#: ../functions/welcome.php:136
+msgid "Credits"
+msgstr ""
+
+#: ../functions/welcome.php:138
+msgid ""
+"This theme was created by <a href=\"http://www.wpexplorer.com\" target="
+"\"_blank\">WPExplorer.com</a>."
+msgstr ""
+
+#: ../functions/welcome.php:140
+msgid "We work hard to develop, host, release and update this theme."
+msgstr ""
+
+#: ../functions/welcome.php:142
+msgid "A back-link to our website and or a donation is very much appreciated!"
+msgstr ""
+
+#: ../functions/welcome.php:147
+msgid "Liability"
+msgstr ""
+
+#: ../functions/welcome.php:149
+msgid ""
+"WPExplorer.com shall not be held liable for any damages, including, but not "
+"limited to, the loss of data or profit, arising from the use of, or "
+"inability to use, this theme."
+msgstr ""
+
+#: ../functions/welcome.php:154
+msgid "Getting Started"
+msgstr ""
+
+#: ../functions/welcome.php:156
+msgid ""
+"Below you will find some useful links to get you started with this theme."
+msgstr ""
+
+#: ../functions/welcome.php:158
+msgid "Customize Your Site"
+msgstr ""
+
+#: ../functions/welcome.php:159
+msgid "Theme Page"
+msgstr ""
+
+#: ../functions/welcome.php:160
+msgid "Documentation"
+msgstr ""
+
+#: ../functions/welcome.php:161
+msgid "Changelog"
+msgstr ""
+
+#: ../functions/welcome.php:183
+msgid "Below are some of the resources we love and recommend."
+msgstr ""
+
+#: ../functions/welcome.php:193
+msgid "Plugins"
+msgstr ""
+
+#: ../functions/welcome.php:194
+msgid ""
+"Below you will find links to plugins we (WPExplorer.com staff) personally "
+"like and recommend. None of these plugins are required for your theme to "
+"work, they simply add additional functionality."
+msgstr ""
+
+#: ../functions/welcome.php:209
+msgid "Total Theme"
+msgstr ""
+
+#: ../functions/welcome.php:210
+msgid ""
+"Check out our most advanced (yet easy to use) and flexible theme to date."
+msgstr ""
+
+#: ../functions/welcome.php:215
+msgid "WordPress Hosting"
+msgstr ""
+
+#: ../functions/welcome.php:216
+msgid ""
+"If you need fast and <a href=\"http://www.wpexplorer.com/wordpress-hosting/"
+"\" target=\"_blank\">reliable hosting</a> we recommend the same host we use "
+"and love WPEngine."
+msgstr ""
+
+#: ../functions/welcome.php:221
+msgid "Deals & Coupons"
+msgstr ""
+
+#: ../functions/welcome.php:222
+msgid "Check out our coupons page for great deals on WordPress resources."
+msgstr ""
+
+#: ../functions/wpex_comments_output.php:22
+#, php-format
+msgid "<cite class=\"author\">%s</cite>"
+msgstr ""
+
+#: ../functions/wpex_comments_output.php:24
+msgid "Reply"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:23
+msgid "Image Gallery"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:109
+#: ../functions/gallery-metabox/gmb-admin.php:172
+msgid "Remove image"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:120
+msgid "Add/Edit Images"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:130
+msgid "Enable Lightbox for this gallery?"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:153
+msgid "Add Images to Gallery"
+msgstr ""
+
+#: ../functions/gallery-metabox/gmb-admin.php:155
+msgid "Add to gallery"
+msgstr ""
