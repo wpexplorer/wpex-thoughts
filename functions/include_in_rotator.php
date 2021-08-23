@@ -8,25 +8,25 @@
  * @return $form_fields, modified form fields
  * @author http://www.billerickson.net/wordpress-add-custom-fields-media-gallery/
  */
- 
+
 function be_attachment_field_rotator( $form_fields, $post ) {
 
 	// Only show on the in-page media uploader
 	$screen = get_current_screen();
-	if( 'media-upload' !== $screen->base )
+	if ( 'media-upload' !== $screen->base )
 		return $form_fields;
 
 	// Set up options
 	$options = array( '0' => 'Yes', '1' => 'No' );
-	
+
 	// Get currently selected value
 	$selected = get_post_meta( $post->ID, 'be_rotator_include', true );
-	
+
 	// If no selected value, default to 'No'
-	if( !isset( $selected ) ) 
+	if ( !isset( $selected ) )
 		$selected = '0';
-	
-	// Display each option	
+
+	// Display each option
 	foreach ( $options as $value => $label ) {
 		$checked = '';
 		$css_id = 'rotator-include-option-' . $value;
@@ -50,7 +50,7 @@ function be_attachment_field_rotator( $form_fields, $post ) {
 		'input' => 'html',
 		'html'  => join("\n", $out),
 	);
-	
+
 	// Return all form fields
 	return $form_fields;
 }
@@ -65,11 +65,11 @@ add_filter( 'attachment_fields_to_edit', 'be_attachment_field_rotator', 10, 2 );
  * @param $attachment array, attachment fields from $_POST form
  * @return $post array, modified post data
  */
- 
+
 function be_attachment_field_rotator_save( $post, $attachment ) {
-	if( isset( $attachment['be-rotator-include'] ) ) 
+	if ( isset( $attachment['be-rotator-include'] ) )
 		update_post_meta( $post['ID'], 'be_rotator_include', $attachment['be-rotator-include'] );
-	
+
 	return $post;
 }
 

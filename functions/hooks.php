@@ -1,14 +1,5 @@
 <?php
-/**
- * Add some useful hooks to main theme elemensts
- * Add more if requested from buyers
- * @package Thoughts WordPress Theme
- * @since 1.0
- * @author AJ Clarke : http://wpexplorer.com
- * @copyright Copyright (c) 2012, AJ Clarke
- * @link http://wpexplorer.com
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
+defined( 'ABSPATH' ) || exit;
 
 
 // Head
@@ -86,6 +77,7 @@ function wpex_hook_footer_after() {
 function wpex_hook_footer_top() {
 	do_action( 'wpex_hook_footer_top' );
 }
+
 function wpex_hook_footer_bottom() {
 	do_action( 'wpex_hook_footer_bottom' );
-} ?>
+}

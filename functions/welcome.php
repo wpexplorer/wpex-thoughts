@@ -1,14 +1,4 @@
 <?php
-/**
- * Admin Welcome Screen - Do not delete!
- *
- * @package WordPress
- * @subpackage Thoughts WPExplorer Theme
- * @since Thoughts 1.0
- */
-
-
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -48,8 +38,8 @@ class WPEX_Welcome {
 	public function admin_menus() {
 		// About
 		add_dashboard_page(
-			__( 'Theme Details', 'wpex' ),
-			__( 'Theme Details', 'wpex' ),
+			__( 'Theme Details', 'wpex-thoughts' ),
+			__( 'Theme Details', 'wpex-thoughts' ),
 			$this->minimum_capability,
 			'wpex-about',
 			array( $this, 'about_screen' )
@@ -57,8 +47,8 @@ class WPEX_Welcome {
 
 		// Recommended
 		add_dashboard_page(
-			__( 'Recommendations | Elegant Theme', 'wpex' ),
-			__( 'Recommendations', 'wpex' ),
+			__( 'Recommendations | Elegant Theme', 'wpex-thoughts' ),
+			__( 'Recommendations', 'wpex-thoughts' ),
 			$this->minimum_capability,
 			'wpex-recommended',
 			array( $this, 'recommended_screen' )
@@ -88,10 +78,10 @@ class WPEX_Welcome {
 		$selected = isset( $_GET['page'] ) ? $_GET['page'] : 'wpex-about'; ?>
 		<h2 class="nav-tab-wrapper">
 			<a class="nav-tab <?php echo $selected == 'wpex-about' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'wpex-about' ), 'index.php' ) ) ); ?>">
-				<?php _e( "About", 'wpex' ); ?>
+				<?php esc_html_e( "About", 'wpex-thoughts' ); ?>
 			</a>
 			<a class="nav-tab <?php echo $selected == 'wpex-recommended' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'wpex-recommended' ), 'index.php' ) ) ); ?>">
-				<?php _e( 'Recommended', 'wpex' ); ?>
+				<?php esc_html_e( 'Recommended', 'wpex-thoughts' ); ?>
 			</a>
 		</h2>
 		<?php
@@ -112,9 +102,9 @@ class WPEX_Welcome {
 			$theme_version = $theme_data->get( 'Version' );
 			$theme_name = $theme_data->get( 'Name' ); ?>
 
-			<h1><?php echo $theme_name; ?> <?php _e( 'Theme', 'wpex' ); ?> v<?php echo $theme_version; ?></h1>
+			<h1><?php echo $theme_name; ?> <?php esc_html_e( 'Theme', 'wpex-thoughts' ); ?> v<?php echo $theme_version; ?></h1>
 			<div class="about-text">
-				<?php _e( 'Thank you for choosing this WordPress theme for your website.', 'wpex' ); ?>
+				<?php esc_html_e( 'Thank you for choosing this WordPress theme for your website.', 'wpex-thoughts' ); ?>
 			</div>
 
 			<?php $this->tabs(); ?>
@@ -125,36 +115,36 @@ class WPEX_Welcome {
 					<br />
 
 					<div>
-						<h4><?php _e( 'GPL License', 'wpex' );?></h4>
-						<p><?php _e( 'This theme is licensed under the GPL license. This means you can use it for anything you like as long as it remains GPL.', 'wpex' );?></p>
+						<h4><?php esc_html_e( 'GPL License', 'wpex-thoughts' );?></h4>
+						<p><?php esc_html_e( 'This theme is licensed under the GPL license. This means you can use it for anything you like as long as it remains GPL.', 'wpex-thoughts' );?></p>
 					</div>
 
 					<div>
-						<h4><?php _e( 'Credits', 'wpex' );?></h4>
+						<h4><?php esc_html_e( 'Credits', 'wpex-thoughts' );?></h4>
 						<p>
-						<?php _e( 'This theme was created by <a href="http://www.wpexplorer.com" target="_blank">WPExplorer.com</a>.', 'wpex' );?>
+						<?php esc_html_e( 'This theme was created by <a href="http://www.wpexplorer.com" target="_blank" rel="noopener noreferrer">WPExplorer.com</a>.', 'wpex-thoughts' );?>
 						<br />
-						<?php _e( 'We work hard to develop, host, release and update this theme.', 'wpex' ); ?>
+						<?php esc_html_e( 'We work hard to develop, host, release and update this theme.', 'wpex-thoughts' ); ?>
 						<br />
-						<?php _e( 'A back-link to our website and or a donation is very much appreciated!', 'wpex' ); ?>
+						<?php esc_html_e( 'A back-link to our website and or a donation is very much appreciated!', 'wpex-thoughts' ); ?>
 						</p>
 					</div>
 
 					<div>
-						<h4><?php _e( 'Liability', 'wpex' );?></h4>
+						<h4><?php esc_html_e( 'Liability', 'wpex-thoughts' );?></h4>
 						<p>
-						<?php _e( 'WPExplorer.com shall not be held liable for any damages, including, but not limited to, the loss of data or profit, arising from the use of, or inability to use, this theme.', 'wpex' );?>
+						<?php esc_html_e( 'WPExplorer.com shall not be held liable for any damages, including, but not limited to, the loss of data or profit, arising from the use of, or inability to use, this theme.', 'wpex-thoughts' );?>
 						</p>
 					</div>
 
 					<div>
-						<h4><?php _e( 'Getting Started', 'wpex' );?></h4>
+						<h4><?php esc_html_e( 'Getting Started', 'wpex-thoughts' );?></h4>
 						<p>
-						<?php _e( 'Below you will find some useful links to get you started with this theme.', 'wpex' );?>
+						<?php esc_html_e( 'Below you will find some useful links to get you started with this theme.', 'wpex-thoughts' );?>
 						</p>
-						<a href="<?php echo wp_customize_url(); ?>" target="_blank" class="button button-primary load-customize hide-if-no-customize"><?php _e('Customize Your Site','wpex'); ?></a>
-						<a href="http://www.wpexplorer.com/thoughts-wordpress-theme/" target="_blank" class="button button-primary"><?php _e('Theme Page','wpex'); ?></a>
-						<a href="http://www.wpexplorer.com/docs/free-theme-documentation/" target="_blank" class="button button-primary"><?php _e('Documentation','wpex'); ?></a>
+						<a href="<?php echo wp_customize_url(); ?>" target="_blank" class="button button-primary load-customize hide-if-no-customize"><?php esc_html_e('Customize Your Site','wpex-thoughts' ); ?></a>
+						<a href="http://www.wpexplorer.com/thoughts-wordpress-theme/" target="_blank" class="button button-primary"><?php esc_html_e('Theme Page','wpex-thoughts' ); ?></a>
+						<a href="http://www.wpexplorer.com/docs/free-theme-documentation/" target="_blank" class="button button-primary"><?php esc_html_e('Documentation','wpex-thoughts' ); ?></a>
 					</div>
 
 				</div>
@@ -174,9 +164,9 @@ class WPEX_Welcome {
 	public function recommended_screen() { ?>
 		<div class="wrap about-wrap">
 
-			<h1><?php _e( 'Recommendations', 'wpex' ); ?></h1>
+			<h1><?php esc_html_e( 'Recommendations', 'wpex-thoughts' ); ?></h1>
 			<div class="about-text">
-				<?php _e( 'Below are some of the resources we love and recommend.', 'wpex' );?>
+				<?php esc_html_e( 'Below are some of the resources we love and recommend.', 'wpex-thoughts' );?>
 			</div>
 
 			<?php $this->tabs(); ?>
@@ -186,37 +176,37 @@ class WPEX_Welcome {
 					<br />
 
 					<div>
-					<h4><?php _e( 'Plugins', 'wpex' ); ?></h4>
-					<p><?php _e( 'Below you will find links to plugins we (WPExplorer.com staff) personally like and recommend. None of these plugins are required for your theme to work, they simply add additional functionality.', 'wpex' ); ?></p>
+					<h4><?php esc_html_e( 'Plugins', 'wpex-thoughts' ); ?></h4>
+					<p><?php esc_html_e( 'Below you will find links to plugins we (WPExplorer.com staff) personally like and recommend. None of these plugins are required for your theme to work, they simply add additional functionality.', 'wpex-thoughts' ); ?></p>
 
 						<ul style="list-style: disc;margin: 20px 0 0 20px;">
-							<li><span style="font-weight:bold">SEO:</span> <a href="http://wordpress.org/plugins/wordpress-seo/" target="_blank">WordPress SEO</a></li>
-							<li><span style="font-weight:bold">Contact Forms:</span> <a href="http://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7</a> or <a href="http://www.wpexplorer.com/gravity-forms-plugin/" target="_blank">Gravity Forms</a></li>
-							<li><span style="font-weight:bold">Backups:</span> <a href="https://vaultpress.com/" target="_blank">VaultPress</a></li>
-							<li><span style="font-weight:bold">Shortcodes:</span> <a href="http://www.wpexplorer.com/symple-shortcodes/" target="_blank">Symple Shortcodes</a></li>
-							<li><span style="font-weight:bold">Page Builder:</span> <a href="http://www.wpexplorer.com/visual-composer-wordpress-plugin/" target="_blank">Visual Composer</a></li>
-							<li><span style="font-weight:bold">Image Sliders:</span class> <a href="http://www.wpexplorer.com/layer-slider-plugin/" target="_blank">LayerSlider</a></li>
-							<li><span style="font-weight:bold">Security:</span> <a href="http://wordpress.org/plugins/limit-login-attempts/" target="_blank">Limit Login Attempts</a>, <a href="http://wordpress.org/plugins/wordfence/screenshots/" target="_blank">WordFence</a> and <a href="hhttp://wordpress.org/plugins/sucuri-scanner/" target="_blank">Sucuri</a></li>
-							<li><span style="font-weight:bold">Other:</span> <a href="http://jetpack.me/" target="_blank">JetPack</a></li>
+							<li><span style="font-weight:bold">SEO:</span> <a href="http://wordpress.org/plugins/wordpress-seo/" target="_blank" rel="noopener noreferrer">WordPress SEO</a></li>
+							<li><span style="font-weight:bold">Contact Forms:</span> <a href="http://wordpress.org/plugins/contact-form-7/" target="_blank" rel="noopener noreferrer">Contact Form 7</a> or <a href="http://www.wpexplorer.com/gravity-forms-plugin/" target="_blank" rel="noopener noreferrer">Gravity Forms</a></li>
+							<li><span style="font-weight:bold">Backups:</span> <a href="https://vaultpress.com/" target="_blank" rel="noopener noreferrer">VaultPress</a></li>
+							<li><span style="font-weight:bold">Shortcodes:</span> <a href="http://www.wpexplorer.com/symple-shortcodes/" target="_blank" rel="noopener noreferrer">Symple Shortcodes</a></li>
+							<li><span style="font-weight:bold">Page Builder:</span> <a href="http://www.wpexplorer.com/visual-composer-wordpress-plugin/" target="_blank" rel="noopener noreferrer">Visual Composer</a></li>
+							<li><span style="font-weight:bold">Image Sliders:</span class> <a href="http://www.wpexplorer.com/layer-slider-plugin/" target="_blank" rel="noopener noreferrer">LayerSlider</a></li>
+							<li><span style="font-weight:bold">Security:</span> <a href="http://wordpress.org/plugins/limit-login-attempts/" target="_blank" rel="noopener noreferrer">Limit Login Attempts</a>, <a href="http://wordpress.org/plugins/wordfence/screenshots/" target="_blank" rel="noopener noreferrer">WordFence</a> and <a href="hhttp://wordpress.org/plugins/sucuri-scanner/" target="_blank" rel="noopener noreferrer">Sucuri</a></li>
+							<li><span style="font-weight:bold">Other:</span> <a href="http://jetpack.me/" target="_blank" rel="noopener noreferrer">JetPack</a></li>
 						</ul>
 					</div>
 
 					<div>
-						<h4><?php _e( 'Total Theme', 'wpex' ); ?></h4>
-						<p><?php _e( 'Check out our most advanced (yet easy to use) and flexible theme to date.', 'wpex' ); ?></p>
-						<a href="http://www.wpexplorer.com/total-wordpress-theme/" class="button button-primary" target="_blank">Total WordPress Theme</a>
+						<h4><?php esc_html_e( 'Total Theme', 'wpex-thoughts' ); ?></h4>
+						<p><?php esc_html_e( 'Check out our most advanced (yet easy to use) and flexible theme to date.', 'wpex-thoughts' ); ?></p>
+						<a href="http://www.wpexplorer.com/total-wordpress-theme/" class="button button-primary" target="_blank" rel="noopener noreferrer">Total WordPress Theme</a>
 					</div>
 
 					<div>
-						<h4><?php _e( 'WordPress Hosting', 'wpex' ); ?></h4>
-						<p><?php _e( 'If you need fast and <a href="http://www.wpexplorer.com/wordpress-hosting/" target="_blank">reliable hosting</a> we recommend the same host we use and love WPEngine.', 'wpex' ); ?></p>
-						<a href="http://www.wpexplorer.com/hosting/wpengine/" class="button button-primary" target="_blank">Learn About WPEngine</a>
+						<h4><?php esc_html_e( 'WordPress Hosting', 'wpex-thoughts' ); ?></h4>
+						<p><?php esc_html_e( 'If you need fast and <a href="http://www.wpexplorer.com/wordpress-hosting/" target="_blank" rel="noopener noreferrer">reliable hosting</a> we recommend the same host we use and love WPEngine.', 'wpex-thoughts' ); ?></p>
+						<a href="http://www.wpexplorer.com/hosting/wpengine/" class="button button-primary" target="_blank" rel="noopener noreferrer">Learn About WPEngine</a>
 					</div>
 
 					<div>
-						<h4><?php _e( 'Deals & Coupons', 'wpex' ); ?></h4>
-						<p><?php _e( 'Check out our coupons page for great deals on WordPress resources.', 'wpex' ); ?></p>
-						<a href="http://www.wpexplorer.com/coupons/" class="button button-primary" target="_blank">View Deals/Coupons</a>
+						<h4><?php esc_html_e( 'Deals & Coupons', 'wpex-thoughts' ); ?></h4>
+						<p><?php esc_html_e( 'Check out our coupons page for great deals on WordPress resources.', 'wpex-thoughts' ); ?></p>
+						<a href="http://www.wpexplorer.com/coupons/" class="button button-primary" target="_blank" rel="noopener noreferrer">View Deals/Coupons</a>
 					</div>
 
 				</div>
@@ -242,6 +232,6 @@ class WPEX_Welcome {
 			exit;
 		}
 	}
-	
+
 }
 new WPEX_Welcome();

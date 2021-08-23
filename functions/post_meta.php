@@ -1,53 +1,51 @@
 <?php
 /**
  * Create meta options for the post post type
+ *
  * @package Thoughts WordPress Theme
- * @since 1.0
- * @author AJ Clarke : http://wpexplorer.com
- * @copyright Copyright (c) 2012, AJ Clarke
- * @link http://wpexplorer.com
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
- 
-$prefix = 'wpex_';
 
-$wpex_meta_box_post_settings = array(
-	'id' => 'wpex-post-meta-box-slider',
-	'title' =>  __('Post Settings', 'wpexuagraphite'),
-	'page' => 'post',
-	'context' => 'normal',
-	'priority' => 'high',
-	'fields' => array(
-		array(
-            'name' => __('Link Format URL', 'wpex'),
-            'id' => $prefix . 'post_url',
-			'desc' => __('Enter the url for your link format URL.', 'wpex'),
-			'std' => '',
-            'type' => 'text',
-        ),
-		array(
-            'name' => __('Audio MP3', 'wpex'),
-            'id' => $prefix . 'post_audio_mp3',
-			'desc' => __('Enter the url for your mp3 audio file for your audio post format.', 'wpex'),
-			'std' => '',
-            'type' => 'text',
-        ),
-		array(
-            'name' => __('Audio OGG', 'wpex'),
-            'id' => $prefix . 'post_audio_ogg',
-			'desc' => __('Enter the url for your ogg audio file for your audio post format. Required for Firefox.', 'wpex'),
-			'std' => '',
-            'type' => 'text',
-        ),
-		array(
-            'name' => __('Video Format Embed', 'wpex'),
-            'id' => $prefix . 'post_video',
-            'desc' =>  __('Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature.', 'wpex') .' <a href="http://codex.wordpress.org/Embeds" target="_blank">'. __('Learn More', 'wpex'),
-			'std' => '',
-            'type' => 'text',
-        ),
-	),
-);
+defined( 'ABSPATH' ) || exit;
+
+function wpex_get_meta_options() {
+	return array(
+		'id' => 'wpex-post-meta-box-slider',
+		'title' =>  esc_html__( 'Post Settings', 'wpex-thoughts' ),
+		'page' => 'post',
+		'context' => 'normal',
+		'priority' => 'high',
+		'fields' => array(
+			array(
+				'name' => esc_html__( 'Link Format URL', 'wpex-thoughts' ),
+				'id' => 'wpex_post_url',
+				'desc' => esc_html__( 'Enter the url for your link format URL.', 'wpex-thoughts' ),
+				'std' => '',
+				'type' => 'text',
+			),
+			array(
+				'name' => esc_html__( 'Audio MP3', 'wpex-thoughts' ),
+				'id' => 'wpex_post_audio_mp3',
+				'desc' => esc_html__( 'Enter the url for your mp3 audio file for your audio post format.', 'wpex-thoughts' ),
+				'std' => '',
+				'type' => 'text',
+			),
+			array(
+				'name' => esc_html__( 'Audio OGG', 'wpex-thoughts' ),
+				'id' => 'wpex_post_audio_ogg',
+				'desc' => esc_html__( 'Enter the url for your ogg audio file for your audio post format. Required for Firefox.', 'wpex-thoughts' ),
+				'std' => '',
+				'type' => 'text',
+			),
+			array(
+				'name' => esc_html__( 'Video Format Embed', 'wpex-thoughts' ),
+				'id' => 'wpex_post_video',
+				'desc' =>  esc_html__( 'Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature.', 'wpex-thoughts' ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank" rel="noopener noreferrer">'. esc_html__( 'Learn More', 'wpex-thoughts' ),
+				'std' => '',
+				'type' => 'text',
+			),
+		),
+	);
+}
 
 /*-----------------------------------------------------------------------------------*/
 // Display meta box in edit post page
@@ -56,10 +54,15 @@ $wpex_meta_box_post_settings = array(
 add_action('admin_menu', 'wpex_add_box_post_settings');
 
 function wpex_add_box_post_settings() {
-	global $wpex_meta_box_post_settings;
-	
-	add_meta_box($wpex_meta_box_post_settings['id'], $wpex_meta_box_post_settings['title'], 'wpex_show_box_post_settings', $wpex_meta_box_post_settings['page'], $wpex_meta_box_post_settings['context'], $wpex_meta_box_post_settings['priority']);
-
+	$settings = wpex_get_meta_options();
+	add_meta_box(
+		$settings['id'],
+		$settings['title'],
+		'wpex_show_box_post_settings',
+		$settings['page'],
+		$settings['context'],
+		$settings['priority']
+	);
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -67,83 +70,76 @@ function wpex_add_box_post_settings() {
 /*-----------------------------------------------------------------------------------*/
 
 function wpex_show_box_post_settings() {
-	global $wpex_meta_box_post_settings, $post;
-	
-	// Use nonce for verification
-	echo '<input type="hidden" name="wpex_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
- 
+	global $post;
+
+	$settings = wpex_get_meta_options();
+
+	wp_nonce_field( 'wpex_thoughts_metabox_nonce', 'wpex_thoughts_metabox_nonce' );
+
 	echo '<table class="form-table">';
- 
-	foreach ($wpex_meta_box_post_settings['fields'] as $field) {
-		
+
+	foreach( $settings['fields'] as $field ) {
+
 		// get current post meta data & set default value if empty
-		$meta = get_post_meta($post->ID, $field['id'], true);
-		
-		if (empty ($meta)) {
-			$meta = $field['std']; 
+		$meta = get_post_meta( $post->ID, $field['id'], true);
+
+		if ( empty($meta ) ) {
+			$meta = $field['std'];
 		}
-		
-		switch ($field['type']) {
-			
-			//If Text		
+
+		switch ( $field['type'] ) {
 			case 'text':
-			
-			echo '<tr style="border-top:1px solid #eeeeee;">',
-				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#777; margin:5px 0 0 0;">'. $field['desc'].'</span></label></th>',
-				'<td>';
-			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
-			
+			echo '<tr>',
+				'<th><label for="' . esc_attr( $field['id'] ) . '">' . esc_html( $field['name'] ) . '</label></th>';
+			$value = $meta ? $meta : $field['std'];
+			echo '<td><input type="text" name="' . esc_attr( $field['id'] ) . '" id="' . esc_attr( $field['id'] ) . '" value="'. esc_attr( $value ) .'" style="width:100%"><p class="small">' . wp_kses_post( $field['desc'] ) . '</p></td>';
+			echo '</tr>';
 			break;
-			
-
 		}
-
 	}
- 
+
 	echo '</table>';
+
 }
- 
-add_action('save_post', 'wpex_save_data_post');
 
 /*-----------------------------------------------------------------------------------*/
 //	Save data when post is edited
 /*-----------------------------------------------------------------------------------*/
- 
-function wpex_save_data_post($post_id) {
-	global $wpex_meta_box_post_settings;
-	
-	if(!isset($_POST['wpex_meta_box_nonce'])) $_POST['wpex_meta_box_nonce'] = "undefine";
- 
-	// verify nonce
-	if (!wp_verify_nonce($_POST['wpex_meta_box_nonce'], basename(__FILE__))) {
+
+function wpex_save_data_post( $post_id ) {
+
+	if ( ! wp_verify_nonce( $_POST['wpex_thoughts_metabox_nonce'], 'wpex_thoughts_metabox_nonce' ) ) {
 		return $post_id;
 	}
- 
+
 	// check autosave
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
 		return $post_id;
 	}
- 
+
 	// check permissions
-	if ('page' == $_POST['post_type']) {
-		if (!current_user_can('edit_page', $post_id)) {
+	if ('page' === $_POST['post_type']) {
+		if ( !current_user_can('edit_page', $post_id)) {
 			return $post_id;
 		}
 	} elseif (!current_user_can('edit_post', $post_id)) {
 		return $post_id;
 	}
- 
+
+	$settings = wpex_get_meta_options();
+
 	//Save fields
-	foreach ($wpex_meta_box_post_settings['fields'] as $field) {
+	foreach( $settings['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
- 
-		if ($new && $new != $old) {
-			update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
+
+		if ( $new && $new != $old ) {
+			update_post_meta( $post_id, $field['id'], stripslashes( htmlspecialchars( $new ) ) );
 		} elseif ('' == $new && $old) {
-			delete_post_meta($post_id, $field['id'], $old);
+			delete_post_meta( $post_id, $field['id'], $old );
 		}
 	}
 
 }
-?>
+
+add_action( 'save_post', 'wpex_save_data_post' );
