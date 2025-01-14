@@ -55,7 +55,6 @@ require_once $template_dir . '/functions/gallery.php';
 if ( is_admin() ) {
 	require_once $template_dir . '/lib/gallery-metabox/gallery-metabox.php';
 	require_once $template_dir . '/functions/post_meta.php';
-	require_once $template_dir . '/functions/welcome.php';
 }
 
 // Title attribute.
